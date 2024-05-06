@@ -1,0 +1,202 @@
+
+
+@keyframes slowMove {
+    0% {
+        top: 0px;
+    }
+    100% {
+        top: -7000px;
+    }
+}
+
+@keyframes rotatrey {
+    0% {
+        transform: rotate3d(0, 0, 1, 0deg);
+    }
+    100% {
+        transform: rotate3d(0, 0, 1, 360deg);
+    }
+}
+@keyframes cupMove {
+    0% {
+        margin-top: 0px;
+    }
+    100% {
+        margin-top: 30px;
+    }
+}
+@keyframes cupshake {
+    0%, 16%, 28%, 100% {
+        transform: rotateZ(0deg);
+    }
+    20% {
+        transform: rotateZ(-5deg);
+    }
+    24% {
+        transform: rotateZ(5deg);
+    }
+}
+
+
+#bgAll {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-image: url(../img/yibu_bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+}
+.shineBg {
+    width: 100%;
+    position: relative;
+    animation: slowMove 600s linear forwards;
+
+}
+
+#mainSection {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.topanimate {
+    position: relative;
+}
+.baguaBox {
+    transform: rotateX(75deg);
+    opacity: .15;
+}
+.topBagua {
+    width: 90%;
+    max-width: 700px;
+    display: block;
+    margin: 0 auto;
+    animation: rotatrey 50s linear forwards;
+}
+.cupBox {
+    width: 30%;
+    max-width: 120px;
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    margin-left: -60px;
+    animation: cupshake 2s linear infinite alternate;
+}
+.topCup {
+    width: 100%;
+    animation: cupMove 5s linear infinite alternate;
+}
+
+.wordSection {
+    position: relative;
+    top: -100px;
+}
+.mainTitle {
+    text-indent:-99999;
+    font-size: 0px;
+    color: transparent;
+    width: 100%;
+    height: 72px;
+    background-image: url(../img/yibu.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.appIcon {
+    width: 40%;
+    padding: 50px 0px;
+    max-width: 120px;
+    display: block;
+    margin: 0 auto;
+}
+.wordSection .info {
+    padding: 50px 0px;
+    font-size: 18px;
+    display: block;
+    color: #222;
+    text-indent: 36px;
+    line-height: 30px;
+    text-align: left;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+
+}
+.appShow {
+    width: 90%;
+    max-width: 900px;
+    display: block;
+    margin: 0 auto;
+}
+.bottomWord {
+    width: 90%;
+    padding: 100px 0px;
+    max-width: 600px;
+    display: block;
+    margin: 0 auto;
+}
+
+.downloadBox {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.downloadBox p {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0px;
+    color: #222;
+}
+.downloadBox img {
+    display: block;
+    margin: 0 auto;
+}
+.downloadBox a:link, .downloadBox a:visited {
+    width: 200px;
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    line-height: 80px;
+    height: 80px;
+    background-image: url(../img/payBG.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    cursor: pointer;
+    margin: 0 auto;
+}
+.downloadBox a:hover, .downloadBox a:active {
+    transition: all 100ms linear;
+    transform: scale(1.05);
+}
+
+.foot {
+    position: relative;
+    top: 80px;
+    font-size: 12px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    color: #666;
+    text-align: center;
+}
+
+
+@media only screen and (max-width:800px) {
+
+    .baguaBox {
+        transform: rotateX(75deg);
+        opacity: .15;
+        padding-top: 260px;
+    }
+}
