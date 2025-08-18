@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轉好運下載頁</title>
+    <style>
+        /* 全局样式 */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        /* 全屏容器 */
+        [full-screen] {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 568px; /* 最小高度 */
+            height: 100vh; /* 全屏高度 */
+            background-color: #fff;
+        }
+
+        /* 登录页背景 */
+        .login-mountain {
+            width: 100%;
+            max-width: 360px;
+            text-align: center;
+        }
+
+        /* Logo样式 */
+        .download-logo {
+            margin: 0 auto 30px auto;
+            width: 98px;
+        }
+
+        .download-logo img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 下载原因文本 */
+        .download-reason {
+            margin-bottom: 40px;
+            font-size: 18px;
+            color: #333; /* 主题文字颜色 */
+        }
+
+        .download-reason .download-app-name {
+            color: #007bff; /* 主题高亮颜色 */
+            font-weight: bold;
+        }
+
+        /* 下载按钮面板 */
+        .download-app-panel {
+            display: flex;
+            justify-content: center;
+            gap: 20px; /* 按钮间距 */
+        }
+
+        /* 下载按钮样式 */
+        .ios-download, .android-download {
+            width: 120px;
+            height: 40px;
+            cursor: pointer;
+        }
+
+        .ios-download img, .android-download img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* 顶部留白 */
+        .login-top-margin {
+            height: 50px; /* 根据需要调整 */
+        }
+    </style>
+</head>
+<body>
+<!-- 全屏登录页 -->
+<div full-screen data-min-height="568" class="login-page">
+    <div class="login-mountain">
+        <!-- 下载页面内容 -->
+        <div class="download-page">
+            <!-- 顶部留白 -->
+            <div class="login-top-margin"></div>
+            <!-- Logo -->
+            <div class="download-logo">
+                <img src="./source/img//navLogo.png" alt="记点单词 Logo">
+            </div>
+            <!-- 下载原因 -->
+            <div class="download-reason">
+                請下載<span class="download-app-name">轉好運</span>
+            </div>
+            <!-- 下载按钮面板 -->
+            <div class="download-app-panel">
+                <!-- iOS下载按钮 -->
+                <a id="ios" target="_blank">
+                    <div class="ios-download">
+                        <img src="./source/img//appstore.png" alt="App Store">
+                    </div>
+                </a>
+                <!-- Android下载按钮 -->
+<!--                <a id="android" target="_blank">-->
+<!--                    <div class="android-download">-->
+<!--                        <img src="./source/img//googleplay.png" alt="Google Play">-->
+<!--                    </div>-->
+<!--                </a>-->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+  function version () {
+    var u = navigator.userAgent, app = navigator.appVersion
+    return {
+      mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+      ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //iOS终端
+      android: u.indexOf('Android') > -1 || u.indexOf('Adr') > -1, //Android终端
+      weixin: u.indexOf('MicroMessenger') > -1 //是否微信 （2015-01-22新增）
+    }
+  }
+
+  document.getElementById('android').addEventListener('click', function () {
+    const v = version()
+    // if (!v.mobile) {
+    //   alert('请在手机打开')
+    //   return
+    // }
+    if (v.weixin) {
+      alert('请在浏览器打开')
+      return
+    }
+    
+    window.location.href = 'market://details?id=com.easyslip.luckywheel'
+
+    setTimeout(() => {
+      // 如果页面没有跳转，说明可能没有安装 Google Play
+      if (!document.hidden) {
+        window.location.href = 'https://edu.bjtsjy.net/api/front/download/apk'
+      }
+    }, 500)
+    //
+    // const packageName = 'com.android.vending' // Google Play 商店的包名
+    // window.plugins.intentShim.isAppInstalled(
+    //   packageName,
+    //   function () {
+    //     window.location.href = 'market://details?id=com.easyslip.luckywheel'
+    //   },
+    //   function () {
+    //     window.location.href = 'https://edu.bjtsjy.net/api/front/download/apk'
+    //   }
+    // )
+  })
+
+  document.getElementById('ios').addEventListener('click', function () {
+    const v = version()
+    // if (!v.mobile) {
+    //   alert('请在手机打开')
+    //   return
+    // }
+    if (v.weixin) {
+      alert('请在浏览器打开')
+      return
+    }
+
+    window.location.href = 'https://itunes.apple.com/app/id6742837033'
+  })
+</script>
+
+</body>
+</html>
