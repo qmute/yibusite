@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="120px" height="54px" viewBox="0 0 120 54" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>转好运</title>
+    <defs>
+        <style>
+            @font-face {
+                font-family: 'LingDongQi';
+                src: url('./LingDongQi.ttf') format('truetype');
+            }
+        </style>
+    </defs>
+    <g id="website" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="转好运" fill="#000000">
+            <text x="60" y="35" font-family="LingDongQi, SimSun, serif" font-size="28" font-weight="900" text-anchor="middle" dominant-baseline="middle">转好运</text>
+        </g>
+    </g>
+</svg>
