@@ -135,15 +135,17 @@
       alert('请在浏览器打开')
       return
     }
-    
-    window.location.href = 'market://details?id=com.easyslip.luckywheel'
 
-    setTimeout(() => {
-      // 如果页面没有跳转，说明可能没有安装 Google Play
-      if (!document.hidden) {
-        window.location.href = 'https://yibuapi.easyslip.cc/api/front/download/apk'
-      }
-    }, 500)
+    window.location.href = 'https://yibuapi.easyslip.cc/api/front/download/apk'
+
+    // window.location.href = 'market://details?id=com.easyslip.luckywheel'
+    //
+    // setTimeout(() => {
+    //   // 如果页面没有跳转，说明可能没有安装 Google Play
+    //   if (!document.hidden) {
+    //     window.location.href = 'https://yibuapi.easyslip.cc/api/front/download/apk'
+    //   }
+      // }, 500)
     //
     // const packageName = 'com.android.vending' // Google Play 商店的包名
     // window.plugins.intentShim.isAppInstalled(
